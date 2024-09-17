@@ -1,0 +1,14 @@
+---
+
+export const resultsArray: APIpokemonDefinitivo[] = [];
+
+async function fetchPokemonData(url: any) {
+  const response = await fetch(url);
+  const data = await response.json();
+  resultsArray.push(data);
+}
+
+for (const pokemon of lista) {
+  await fetchPokemonData(pokemon.url);
+}
+---
